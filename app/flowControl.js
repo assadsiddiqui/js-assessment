@@ -10,7 +10,27 @@ define(function() {
       // 'fizzbuzz';
       //
       // otherwise the function should return the number, or false if no number
-      // was provided or the value provided is not a number
+        // was provided or the value provided is not a number
+
+        if (typeof num !== 'number') {
+            return false;
+        }
+        
+        var divisibleBy3 = num % 3 === 0;
+        var divisibleBy5 = num % 5 === 0;
+
+        if (divisibleBy3 && divisibleBy5) {
+            return "fizzbuzz";
+        }
+        else if(divisibleBy3){
+            return "fizz";
+        }
+        else if (divisibleBy5) {
+            return "buzz";
+        }
+        else {
+            return num;
+        }
     }
   };
 });
